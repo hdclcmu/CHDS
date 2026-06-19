@@ -156,6 +156,8 @@ def _run_mcmc_heuristic(
 def CHDS_synthesizer(input_df : pd.DataFrame,
                      num_records_to_generate : int,
                      numerical_cols : list[str],
+                     k_neighbor : int = 15,
+                     n_hull : int = 7500,
                      burn_in : int = 2000):
     # 1. Data preprocessing
     categorical_cols = [col for col in input_df.columns if col not in numerical_cols]
@@ -174,8 +176,9 @@ def CHDS_synthesizer(input_df : pd.DataFrame,
     N, d = data_points.shape
     
     # 2. Geometric structure construction
+    k_neighbor = max(d+3, k_neighbor)
     hulls = local_maximal_convex_position(
-        data_points, k=d+3, n=int(N * 3/4)
+        data_points, k=k_neighbor, n=n_hull
     )
     n_hulls = len(hulls)
     print(f"{n_hulls} convex positions constructed")

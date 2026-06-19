@@ -25,11 +25,12 @@ df = pd.read_csv('your_dataset.csv')
 numerical_cols = ['CreditScore', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'EstimatedSalary']
 
 # 3. Generate synthetic data
-synthetic_data = CHDS_synthesizer(
-    input_df=df,
-    num_records_to_generate=df.shape[0], # Generate the same number of rows as the original
-    numerical_cols=numerical_cols,
-    burn_in=2000
-)
+N,d = df.shape
+synthetic_data = CHDS_synthesizer(input_df=df,
+                                  num_records_to_generate=N,
+                                  numerical_cols=numerical_cols,
+                                  k_neighbor=d+3,
+                                  n_hull=int(3/4*N),
+                                  burn_in=2000)
 
 synthetic_data.head()
