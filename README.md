@@ -1,4 +1,6 @@
 # CHDS: Geometry-Based Synthetic Data Generation for Tabular Data
-##Requirements
+## Requirements
+- Python 3.XX
+- Numpy XX.XX
 
-##Usage
+## Usage
