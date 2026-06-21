@@ -40,6 +40,6 @@ synthetic_data.head()
 Pongmarutai S., Chaidee S., Aramrat C., Angkurawaranon C. and Inkeaw P.. **CHDS: Geometry-Based Synthetic Data Generation for Tabular Data**. 2026.
 
 ## Contact us
-Papangkorn Inkeaw\
+Papangkorn Inkeaw  
 E-mail: papangkorn.i@cmu.ac.th
 
