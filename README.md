@@ -34,6 +34,7 @@ synthetic_data = CHDS_synthesizer(input_df=df,
                                   burn_in=2000)
 
 synthetic_data.head()
+```
 
 ## Citation
 Pongmarutai S., Chaidee S., Aramrat C., Angkurawaranon C. and Inkeaw P.. **CHDS: Geometry-Based Synthetic Data Generation for Tabular Data**. 2026.
